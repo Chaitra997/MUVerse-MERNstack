@@ -1,0 +1,13 @@
+{
+  "name": "mern-stack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install --prefix Backend && npm install --prefix tailwindcss4 && npm run build --prefix tailwindcss4",
+    "start": "npm run start --prefix Backend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
