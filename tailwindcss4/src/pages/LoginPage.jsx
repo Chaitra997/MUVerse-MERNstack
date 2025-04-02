@@ -7,25 +7,24 @@ import toast from "react-hot-toast";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
+  const [formData, setFormData] = useState({ email: "", password: "" });
 
   const { login, isLoggingIn } = useAuthStore();
 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   const validateForm = () => {
     if (!formData.email.trim()) return toast.error("Email is required");
-    if (!/\S+@\S+\.\S+/.test(formData.email)) return toast.error("Invalid email format");
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) return toast.error("Invalid email format");
     if (!formData.password) return toast.error("Password is required");
-
     return true;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const success = validateForm();
-    if (success === true) login(formData);
+    if (validateForm()) login(formData);
   };
 
   return (
@@ -50,15 +49,16 @@ const LoginPage = () => {
                 <span className="label-text font-medium text-red-600">Email</span>
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Mail className="size-5 text-gray-400" />
-                </div>
+                <Mail className="absolute inset-y-0 left-3 size-5 text-gray-400" />
                 <input
                   type="email"
+                  name="email"
                   className="input input-bordered w-full pl-10 bg-white border-gray-300 text-gray-800"
                   placeholder="you@example.com"
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={handleChange}
+                  required
+                  aria-label="Email address"
                 />
               </div>
             </div>
@@ -69,36 +69,37 @@ const LoginPage = () => {
                 <span className="label-text font-medium text-red-600">Password</span>
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Lock className="size-5 text-gray-400" />
-                </div>
+                <Lock className="absolute inset-y-0 left-3 size-5 text-gray-400" />
                 <input
                   type={showPassword ? "text" : "password"}
+                  name="password"
                   className="input input-bordered w-full pl-10 bg-white border-gray-300 text-gray-800"
                   placeholder="••••••••"
                   value={formData.password}
-                  onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                  onChange={handleChange}
+                  required
+                  aria-label="Password"
                 />
                 <button
                   type="button"
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center"
+                  className="absolute inset-y-0 right-3 flex items-center"
                   onClick={() => setShowPassword(!showPassword)}
+                  aria-label={showPassword ? "Hide password" : "Show password"}
                 >
-                  {showPassword ? (
-                    <EyeOff className="size-5 text-gray-400" />
-                  ) : (
-                    <Eye className="size-5 text-gray-400" />
-                  )}
+                  {showPassword ? <EyeOff className="size-5 text-gray-400" /> : <Eye className="size-5 text-gray-400" />}
                 </button>
               </div>
             </div>
 
             {/* Sign In Button */}
-            <button type="submit" className="btn btn-primary w-full bg-red-500 hover:bg-red-600 text-white" disabled={isLoggingIn}>
+            <button 
+              type="submit" 
+              className="btn btn-primary w-full bg-red-500 hover:bg-red-600 text-white" 
+              disabled={isLoggingIn}
+            >
               {isLoggingIn ? (
                 <>
-                  <Loader2 className="size-5 animate-spin" />
-                  Loading...
+                  <Loader2 className="size-5 animate-spin" /> Loading...
                 </>
               ) : (
                 "Sign in"
@@ -109,10 +110,7 @@ const LoginPage = () => {
           {/* Sign Up Link */}
           <div className="text-center">
             <p className="text-gray-600">
-              Don&apos;t have an account?{" "}
-              <Link to="/signup" className="text-red-500 hover:underline">
-                Create account
-              </Link>
+              Don&apos;t have an account? <Link to="/signup" className="text-red-500 hover:underline">Create account</Link>
             </p>
           </div>
         </div>
