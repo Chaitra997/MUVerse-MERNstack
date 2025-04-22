@@ -8,6 +8,8 @@ import { connectDB } from "./lib/db.js";
 import authRoutes from "./routes/auth.routes.js";
 import messageRoutes from "./routes/message.route.js";
 import { app, server } from "./lib/socket.js";
+import eventRoutes from "./routes/event.routes.js";
+
 
 
 dotenv.config()
@@ -17,7 +19,7 @@ const PORT = process.env.PORT;
 const __dirname = path.resolve();
 
 
-// Increase payload size limit to support larger files
+
 app.use(express.json({ limit: "50mb" })); 
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(cookieParser());
@@ -31,6 +33,7 @@ app.use(
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
+app.use("/api/events", eventRoutes);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../tailwindcss4/dist")));
