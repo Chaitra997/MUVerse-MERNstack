@@ -69,13 +69,13 @@ const Navbar = () => {
               onClick={() => setIsSearchOpen(true)}
               className="p-1.5 hover:bg-gray-100 rounded-full"
             >
-              <Search className="w-4 h-4 text-gray-600" />
+              <Search className="w-4 h-4 text-white-600" />
             </button>
             <button
               onClick={openEventModal}
               className="p-1.5 hover:bg-gray-100 rounded-full"
             >
-              <Plus className="w-4 h-4 text-gray-600" />
+              <Plus className="w-4 h-4 text-white-600" />
             </button>
             <button
               onClick={logout}
@@ -98,7 +98,7 @@ const Navbar = () => {
             <div className="flex justify-between items-center">
               <h2 className="text-base font-semibold">Search Recent Chats</h2>
               <button onClick={() => setIsSearchOpen(false)}>
-                <X className="w-4 h-4 text-gray-600" />
+                <X className="w-4 h-4 text-white-600" />
               </button>
             </div>
             <input
