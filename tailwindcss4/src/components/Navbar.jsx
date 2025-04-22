@@ -1,21 +1,20 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+import { useState } from "react";
 import { useAuthStore } from "../store/useAuthStore";
 import { useChatStore } from "../store/useChatStore";
 import { useEventModalStore } from "../store/useEventModalStore";
-import { Users, Bell, Search, X, Plus } from "lucide-react";
+import { MessageSquare, Users, Bell, Search, Plus } from "lucide-react";
 import AddEventModal from "./AddEventModal";
 
 const Navbar = () => {
-  const { logout, authUser } = useAuthStore();
+  const { authUser } = useAuthStore();
   const { users, getUsers, setSelectedUser } = useChatStore();
   const { isOpen: isEventModalOpen, openModal: openEventModal, closeModal: closeEventModal } = useEventModalStore();
-
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredUsers, setFilteredUsers] = useState([]);
-
-  const navigate = useNavigate();
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   useEffect(() => {
     getUsers().catch((err) => {
@@ -41,63 +40,62 @@ const Navbar = () => {
     setSelectedUser(user);
     setIsSearchOpen(false);
     setSearchQuery("");
-    navigate("/home");
   };
 
   return (
     <>
-      <header className="bg-white border-b border-gray-200 fixed w-full top-0 z-40">
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <img
-              src="/logo.png"
-              alt="MUVerse Logo"
-              className="w-10 h-10 object-contain rounded-full"
-            />
-            <h1 className="text-xl font-bold text-red-600">MUVerse</h1>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <Link to="/contacts" className="p-2 hover:bg-gray-100 rounded-full">
-              <Users className="w-5 h-5 text-gray-600" />
-            </Link>
-
-            <Link to="/notifications" className="p-2 hover:bg-gray-100 rounded-full relative">
-              <Bell className="w-5 h-5 text-gray-600" />
-              <span className="absolute top-1 right-1 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
-                3
-              </span>
-            </Link>
-
-            <button
-              onClick={() => setIsSearchOpen(true)}
-              className="p-2 hover:bg-gray-100 rounded-full"
-            >
-              <Search className="w-5 h-5 text-gray-600" />
-            </button>
-
-            <button
-              onClick={openEventModal}
-              className="p-2 hover:bg-gray-100 rounded-full"
-            >
-              <Plus className="w-5 h-5 text-gray-600" />
-            </button>
-
-            <button onClick={logout} className="text-gray-600 hover:text-red-500">
-              Logout
-            </button>
-
-            <Link to="/profile">
-              <div className="w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center">
-                {authUser?.fullName?.charAt(0) || "U"}
-              </div>
-            </Link>
-          </div>
+      <nav className="fixed bottom-0 left-0 right-0 z-[9999] bg-white border-t shadow-sm sm:hidden">
+        <div className="flex justify-around py-2">
+          <NavLink
+            to="/home"
+            className={`flex flex-col items-center text-sm ${
+              currentPath === "/home" ? "text-red-500" : "text-gray-600"
+            }`}
+          >
+            <MessageSquare className="w-5 h-5 mb-0.5" />
+            <span>Messages</span>
+          </NavLink>
+          <NavLink
+            to="/contacts"
+            className={`flex flex-col items-center text-sm ${
+              currentPath === "/contacts" ? "text-red-500" : "text-gray-600"
+            }`}
+          >
+            <Users className="w-5 h-5 mb-0.5" />
+            <span>Contacts</span>
+          </NavLink>
+          <NavLink
+            to="/notifications"
+            className={`flex flex-col items-center text-sm ${
+              currentPath === "/notifications" ? "text-red-500" : "text-gray-600"
+            }`}
+          >
+            <Bell className="w-5 h-5 mb-0.5" />
+            <span>Alerts</span>
+          </NavLink>
+          <button
+            onClick={() => setIsSearchOpen(true)}
+            className={`flex flex-col items-center text-sm ${
+              isSearchOpen ? "text-red-500" : "text-gray-600"
+            }`}
+          >
+            <Search className="w-5 h-5 mb-0.5" />
+            <span>Search</span>
+          </button>
+          <button
+            onClick={openEventModal}
+            className={`flex flex-col items-center text-sm ${
+              isEventModalOpen ? "text-red-500" : "text-gray-600"
+            }`}
+          >
+            <Plus className="w-5 h-5 mb-0.5" />
+            <span>Event</span>
+          </button>
         </div>
-      </header>
+      </nav>
 
       {isSearchOpen && (
-        <div className="fixed inset-0 bg-black/40 z-[9999] flex items-center justify-center px-4 pt-32">
+        <div className="fixed inset-0 bg-black/40 z-[10000] flex items-center justify-center px-4 pt-32 pb-20">
           <div className="bg-white w-full max-w-md rounded-lg shadow-xl p-4 space-y-4">
             <div className="flex justify-between items-center">
               <h2 className="text-lg font-semibold">Search Recent Chats</h2>
@@ -105,7 +103,6 @@ const Navbar = () => {
                 <X className="w-5 h-5 text-gray-600" />
               </button>
             </div>
-
             <input
               type="text"
               className="input input-bordered w-full"
@@ -113,7 +110,6 @@ const Navbar = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
-
             {filteredUsers.length > 0 ? (
               <ul className="space-y-2 max-h-60 overflow-y-auto">
                 {filteredUsers.map((user) => (
