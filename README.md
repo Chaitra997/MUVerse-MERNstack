@@ -41,7 +41,7 @@ To build a secure, scalable, mobile-first social networking app that enables Mah
 ---
 
 📁 Folder Structure
-<pre> MUVerse-MERNstack/ ├── Backend/ # Node.js + Express backend ├── Frontend/ # React Native frontend ├── docs/ # Project documents │ ├── Statement_of_Work.pdf │ ├── SRS.pdf │ └── SDD.pdf ├── README.md └── .env.example </pre>
+<pre> MUVerse-MERNstack/ ├── Backend/ (# Node.js + Express backend) ├── Frontend/ (# React Native frontend) ├── docs/ (# Project documents) │ ├── Statement_of_Work.pdf │ ├── SRS.pdf │ └── SDD.pdf ├── README.md  </pre>
 
 
 ### Team Members & Contributions
@@ -55,18 +55,18 @@ To build a secure, scalable, mobile-first social networking app that enables Mah
 
 
 
-📄 Documentation
+### 📄 Documentation
 
-📘 Statement of Work
-📘 Software Requirements Specification (SRS)
-📘 Software Design Document (SDD)
+- Statement of Work
+- Software Requirements Specification (SRS)
+- Software Design Document (SDD)
 
 
-✅ Status
+### ✅ Status
 
-🔒 Auth: ✅ Complete
-💬 Chat: ✅ Real-time working
-🖼️ Media Upload: ✅ Working with Cloudinary
-📅 Event Posting: ✅ Done
+-🔒 Auth: ✅ Complete
+-💬 Chat: ✅ Real-time working
+-🖼️ Media Upload: ✅ Working with Cloudinary
+-📅 Event Posting: ✅ Done
 
 
