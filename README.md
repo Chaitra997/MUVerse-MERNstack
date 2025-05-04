@@ -26,7 +26,7 @@ To build a secure, scalable, mobile-first social networking app that enables Mah
 | Real-time | Socket.IO |
 | Media Storage | Cloudinary |
 | State Management | Zustand |
-| Deployment | Render (Full Stack) |
+| Deployment | Render |
 
 ---
 
@@ -39,5 +39,45 @@ To build a secure, scalable, mobile-first social networking app that enables Mah
 - 🔄 Event feed 
 
 ---
+## 📁 Folder Structure
+MUVerse-MERNstack/
+│
+├── Backend/ # Node.js + Express backend
+│
+│
+├── Frontend/ # React Native frontend
+│ 
+│
+├── docs/ # Project documents
+│ ├── Statement_of_Work.pdf
+│ ├── SRS.pdf
+│ └── SDD.pdf
+│
+├── README.md
+
+
+👨‍💻 Team Members & Contributions
+
+Name	Roll No	Roles
+D. Safdar Hussain	                     SE22UCSE085	      Frontend, API Integration
+P. Chaitra	                            SE22UCSE193	      Frontend, Backend
+K. Pranvith	                           SE22UCSE133	      Backend APIs, Deployment
+K. Pavithra	                           SE22UCSE136	      Frontend, Deployment
+B. Shivani	                            SE22UCSE048	      Backend, Interface
+Alekhya Raavi	                         SE22UCSE022       Frontend, API coordination
+
+📄 Documentation
+
+📘 Statement of Work
+📘 Software Requirements Specification (SRS)
+📘 Software Design Document (SDD)
+
+
+✅ Status
+
+🔒 Auth: ✅ Complete
+💬 Chat: ✅ Real-time working
+🖼️ Media Upload: ✅ Working with Cloudinary
+📅 Event Posting: ✅ Done
 
 
