@@ -64,9 +64,9 @@ To build a secure, scalable, mobile-first social networking app that enables Mah
 
 ### ✅ Status
 
--🔒 Auth: ✅ Complete
--💬 Chat: ✅ Real-time working
--🖼️ Media Upload: ✅ Working with Cloudinary
--📅 Event Posting: ✅ Done
+- 🔒 Auth: ✅ Complete
+- 💬 Chat: ✅ Real-time working
+- 🖼️ Media Upload: ✅ Working with Cloudinary
+- 📅 Event Posting: ✅ Done
 
 
