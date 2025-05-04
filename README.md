@@ -44,13 +44,14 @@ To build a secure, scalable, mobile-first social networking app that enables Mah
 <pre> MUVerse-MERNstack/ ├── Backend/ # Node.js + Express backend ├── Frontend/ # React Native frontend ├── docs/ # Project documents │ ├── Statement_of_Work.pdf │ ├── SRS.pdf │ └── SDD.pdf ├── README.md └── .env.example </pre>
 
 
-Team Members & Contributions
-👨‍💻 D. Safdar Hussain      SE22UCSE085     Frontend, API Integration
-👩‍💻 P. Chaitra             SE22UCSE193     Frontend, Backend
-👨‍💻 K. Pranvith            SE22UCSE133     Backend APIs, Deployment
-👩‍💻 K. Pavithra            SE22UCSE136     Frontend, Deployment
-👩‍💻 B. Shivani             SE22UCSE048     Backend, Interface
-👩‍💻 Alekhya Raavi          SE22UCSE022     Frontend, API Coordination
+### Team Members & Contributions
+
+- D. Safdar Hussain      SE22UCSE085     Frontend, API Integration
+- P. Chaitra             SE22UCSE193     Frontend, Backend
+- K. Pranvith            SE22UCSE133     Backend APIs, Deployment
+- K. Pavithra            SE22UCSE136     Frontend, Deployment
+- B. Shivani             SE22UCSE048     Backend, Interface
+- Alekhya Raavi          SE22UCSE022     Frontend, API Coordination
 
 
 
