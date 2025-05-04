@@ -46,13 +46,13 @@ To build a secure, scalable, mobile-first social networking app that enables Mah
 
 👨‍💻 Team Members & Contributions
 
-Name	Roll No	Roles
-D. Safdar Hussain	                     SE22UCSE085	      Frontend, API Integration
-P. Chaitra	                            SE22UCSE193	      Frontend, Backend
-K. Pranvith	                           SE22UCSE133	      Backend APIs, Deployment
-K. Pavithra	                           SE22UCSE136	      Frontend, Deployment
-B. Shivani	                            SE22UCSE048	      Backend, Interface
-Alekhya Raavi	                         SE22UCSE022       Frontend, API coordination
+D. Safdar Hussain	                     SE22UCSE085	     Frontend, API Integration
+P. Chaitra	                            SE22UCSE193	     Frontend, Backend
+K. Pranvith                           	SE22UCSE133     	Backend APIs, Deployment
+K. Pavithra	                           SE22UCSE136     	Frontend, Deployment
+B. Shivani	                            SE22UCSE048	     Backend, Interface
+Alekhya Raavi	                         SE22UCSE022	     Frontend, API Coordination
+
 
 📄 Documentation
 
