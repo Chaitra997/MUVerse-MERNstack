@@ -34,7 +34,7 @@ const SignUpPage = () => {
       <div className="w-full max-w-md space-y-6 bg-white p-8 rounded-lg shadow-md">
         {/* Header Section */}
         <div className="text-center mb-6">
-          <h1 className="text-4xl font-bold text-gray-800">MUVerse</h1>
+          <h1 className="text-4xl font-bold text-red-700">MUVerse</h1>
           <p className="text-gray-500 mt-1">Join the Mahindra University community</p>
         </div>
 
@@ -44,11 +44,11 @@ const SignUpPage = () => {
             <img
               src="/logo.png"
               alt="MUVerse Logo"
-              className="w-10 h-10 rounded-full object-contain"
+              className="w-16 h-16 rounded-full object-contain"
             />
-            <h2 className="text-2xl font-bold text-red-600">MUVerse</h2>
+            {/* <h2 className="text-2xl font-bold text-red-600">MUVerse</h2> */}
           </div>
-          <h3 className="text-xl font-semibold text-gray-800 mt-2">Create Account</h3>
+          <h3 className="text-xl font-semibold text-gray-800 mt-2"><b>Create Account</b></h3>
           <p className="text-gray-500 mt-1">Sign up with your university credentials</p>
         </div>
 
@@ -65,7 +65,7 @@ const SignUpPage = () => {
                 type="text"
                 name="fullName"
                 className="input input-bordered w-full pl-10 bg-gray-100 border-gray-300 text-gray-800 rounded-md"
-                placeholder="John Doe"
+                placeholder="Vijay Avinash"
                 value={formData.fullName}
                 onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
               />
@@ -75,7 +75,7 @@ const SignUpPage = () => {
           {/* Email */}
           <div className="form-control">
             <label className="label">
-              <span className="label-text font-medium text-gray-700">Email</span>
+              <span className="label-text font-medium text-gray-700">University Email</span>
             </label>
             <div className="relative">
               <Mail className="absolute inset-y-0 left-3 size-5 text-gray-400" />
@@ -83,7 +83,7 @@ const SignUpPage = () => {
                 type="email"
                 name="email"
                 className="input input-bordered w-full pl-10 bg-gray-100 border-gray-300 text-gray-800 rounded-md"
-                placeholder="your.name@mahindrauniversity.edu.in"
+                placeholder="your_ID@mahindrauniversity.edu.in"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               />

@@ -32,7 +32,7 @@ const LoginPage = () => {
       <div className="w-full max-w-md space-y-6 bg-white p-8 rounded-lg shadow-md">
         {/* Header Section */}
         <div className="text-center mb-6">
-          <h1 className="text-4xl font-bold text-red-800">MUVerse</h1>
+          <h1 className="text-4xl font-bold text-red-700">MUVerse</h1>
           <p className="text-gray-500 mt-1">
             Connect with the Mahindra University community
           </p>
@@ -44,12 +44,12 @@ const LoginPage = () => {
            <img
              src="/logo.png"
              alt="MUVerse Logo"
-             className="w-10 h-10 rounded-full object-contain"
+             className="w-16 h-16 rounded-full object-contain"
            />
            {/* '''<h2 className="text-2xl font-bold text-red-600">MUVerse</h2>// */}
          </div>
          <h3 className="text-xl font-semibold text-gray-800 mt-2">
-           Welcome Back
+           <b>Welcome Back</b>
          </h3>
          <p className="text-gray-500 mt-1">
            Login with your Mahindra University credentials
@@ -70,7 +70,7 @@ const LoginPage = () => {
                 type="email"
                 name="email"
                 className="input input-bordered w-full pl-10 bg-gray-100 border-gray-300 text-gray-800 rounded-md"
-                placeholder="your.name@mahindrauniversity.edu.in"
+                placeholder="your_ID@mahindrauniversity.edu.in"
                 value={formData.email}
                 onChange={handleChange}
                 required

@@ -11,7 +11,7 @@ const LandingPage = () => {
             alt="MUVerse Logo"
             className="w-10 h-10 rounded-full object-contain"
           />
-          <h1 className="text-xl font-bold text-red-600">MUVerse</h1>
+          <h1 className="text-xl font-bold text-red-700">MUVerse</h1>
         </div>
 
         <h2 className="text-3xl font-bold text-gray-800 mb-2">Welcome to MUVerse</h2>
@@ -25,7 +25,7 @@ const LandingPage = () => {
       <div className="flex flex-col gap-4 w-full max-w-xs">
         <Link
           to="/login"
-          className="w-full bg-red-600 hover:bg-red-700 !text-black font-medium py-2 rounded-md transition"
+          className="w-full bg-red-700 hover:bg-red-=800 !text-black font-medium py-2 rounded-md transition"
         >
           Login
         </Link>

@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import { useAuthStore } from "./store/useAuthStore";
 import { useThemeStore } from "./store/useThemeStore";
+import { useChatStore } from "./store/useChatStore";
 import { useEffect } from "react";
 import { Loader } from "lucide-react";
 
@@ -17,7 +18,8 @@ import BottomNav from "./components/BottomNav";
 import { Toaster } from "react-hot-toast";
 
 const App = () => {
-  const { authUser, checkAuth, isCheckingAuth, onlineUsers } = useAuthStore();
+  const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
+  const { selectedUser } = useChatStore();
   const { theme } = useThemeStore();
 
   useEffect(() => {
@@ -37,7 +39,11 @@ const App = () => {
       {/* Show navbar only when logged in */}
       {authUser && <Navbar />}
 
-      <div className="w-full max-w-5xl px-4 mx-auto pt-20 pb-24">
+      <div className={
+        window.location.pathname === "/home"
+          ? "pt-14 h-screen"
+          : "w-full max-w-5xl px-4 mx-auto pt-20 pb-24"
+      }>
         <Routes>
           <Route path="/" element={authUser ? <Navigate to="/home" /> : <LandingPage />} />
           <Route path="/login" element={!authUser ? <LoginPage /> : <Navigate to="/home" />} />
@@ -53,8 +59,8 @@ const App = () => {
 
       <Toaster />
 
-      {/* Show bottom nav only when logged in */}
-      {authUser && <BottomNav />}
+      {/* Show bottom nav only if logged in AND no chat is selected */}
+      {authUser && !selectedUser && <BottomNav />}
     </div>
   );
 };

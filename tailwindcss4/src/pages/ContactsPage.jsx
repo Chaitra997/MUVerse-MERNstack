@@ -20,7 +20,9 @@ const ContactsPage = () => {
   return (
     <div className="min-h-screen pt-20 px-4">
       <div className="max-w-5xl mx-auto">
-        <h1 className="text-2xl font-bold mb-4">All Contacts</h1>
+        <h1 className="text-2xl font-bold mb-4"><b>University Contacts</b></h1>
+        <p>Connect with students and faculty members</p>
+        <br></br>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredUsers.map((user) => (
             <div
