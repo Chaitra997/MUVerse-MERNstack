@@ -3,6 +3,10 @@
  [Live App](https://muverse-mernstack-2.onrender.com/home) | 🎥 [Watch Project Video] (https://drive.google.com/file/d/1ClJYDpejyPOnod5OGACU_zlGSnmSjbyj/view?usp=share_link) |
  [Watch App demo]()
 
+[🔗 Live App](https://muverse-mernstack-2.onrender.com/home)  
+🎥 [Watch Project Presentation](https://drive.google.com/file/d/1ClJYDpejyPOnod5OGACU_zlGSnmSjbyj/view?usp=share_link)  
+📱 [Watch App Demo](https://drive.google.com/file/d/1EgxujnJLlu_H_TEHcdafQLzjYimukX-e/view?usp=share_link)
+
 MUVerse is a university-exclusive mobile social networking platform designed to connect Mahindra University students. With real-time messaging, group chats, media sharing, and upcoming features like event announcements, MUVerse promotes collaboration, connectivity, and campus engagement in a secure, student-only ecosystem.
 
 ---
