@@ -1,9 +1,9 @@
 # 📱 MUVerse – A Social Networking App for Mahindra University
 
-Version: 1.0
-Developed by: Software Engineering Team-18, Mahindra University
-Course: Software Engineering
-Instructor: Prof. Vijay Rao
+**Version:** 1.0  
+**Developed by:** Software Engineering Team-18, Mahindra University  
+**Course:** Software Engineering  
+**Instructor:** Prof. Vijay Rao
 
 ---
 
