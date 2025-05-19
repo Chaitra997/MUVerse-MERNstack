@@ -11,14 +11,9 @@ const EventsPage = () => {
   const fetchEvents = async () => {
     try {
       const res = await axiosInstance.get("/events");
-      console.log("Fetch Events Response:", res.data);
       setEvents(res.data);
     } catch (err) {
-      console.error("Error fetching events:", {
-        status: err.response?.status,
-        data: err.response?.data,
-        message: err.message,
-      });
+      console.error("Error fetching events:", err);
       toast.error(err.response?.data?.error || "Failed to load events");
     }
   };
@@ -28,29 +23,31 @@ const EventsPage = () => {
   }, []);
 
   return (
-    <div className="p-4">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-bold">Campus Events</h2>
-        <button className="btn btn-primary" onClick={openEventModal}>
+    <div className="pt-14 h-screen w-screen overflow-hidden bg-white flex flex-col">
+      <div className="flex justify-between items-center px-6 py-4">
+        <h2 className="text-3xl font-bold">Campus Events</h2>
+        <button className="btn btn-sm btn-neutral" onClick={openEventModal}>
           Add Event
         </button>
       </div>
 
-      {events.length === 0 && <p className="text-gray-500">No events yet.</p>}
-
-      <div className="space-y-4">
-        {events.map((event) => (
-          <div key={event._id} className="card bg-base-100 shadow-md p-4">
-            <h3 className="text-lg font-semibold">{event.title}</h3>
-            <p className="text-sm text-gray-600">
-              {new Date(event.date).toLocaleDateString()}
-            </p>
-            <p className="mt-2">{event.description}</p>
-            <p className="text-sm mt-1 text-gray-400">
-              Posted by: {event.createdBy?.fullName || "Anonymous"}
-            </p>
-          </div>
-        ))}
+      <div className="flex-1 overflow-y-auto px-6 pb-6 space-y-4">
+        {events.length === 0 ? (
+          <p className="text-gray-500">No events yet.</p>
+        ) : (
+          events.map((event) => (
+            <div key={event._id} className="card bg-base-100 shadow-md p-4">
+              <h3 className="text-lg font-semibold">{event.title}</h3>
+              <p className="text-sm text-gray-600">
+                {new Date(event.date).toLocaleDateString()}
+              </p>
+              <p className="mt-2">{event.description}</p>
+              <p className="text-sm mt-1 text-gray-400">
+                Posted by: {event.createdBy?.fullName || "Anonymous"}
+              </p>
+            </div>
+          ))
+        )}
       </div>
 
       {showModal && (
